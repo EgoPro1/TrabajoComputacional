@@ -76,10 +76,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Egocheaga Ramos Joaquin Alonso
-        Huarachi Macuri Julio Cesar
-         Porras Santos Antoni
-         Sánchez Reynoso José Luis  "
+        android:text="Egocheaga Ramos Joaquin Alonso Huarachi Macuri Julio Cesar Porras Santos Antoni                      Sánchez Reynoso José Luis  "
         android:textColor="#fc1515"
         android:textSize="20dp"
         android:textStyle="italic"

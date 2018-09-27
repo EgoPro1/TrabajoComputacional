@@ -45,12 +45,7 @@ TextView textView1;
                 c5=entrada5.getText().toString();
                 c6=entrada6.getText().toString();
 
-                C=Double.parseDouble(c1);
-                T=Double.parseDouble(c2);
-                r=Double.parseDouble(c3);
-                sigma=Double.parseDouble(c4);
-                X=Double.parseDouble(c5);
-                S=Double.parseDouble(c6);
+
 
         if(c1.equals("")||c2.equals("")||c3.equals("")||c4.equals("")||c5.equals("")||c6.equals(""))
         {
@@ -58,6 +53,14 @@ TextView textView1;
         mensaje();
 
         }else{
+
+            C=Double.parseDouble(c1);
+            T=Double.parseDouble(c2);
+            r=Double.parseDouble(c3);
+            sigma=Double.parseDouble(c4);
+            X=Double.parseDouble(c5);
+            S=Double.parseDouble(c6);
+
             d1=( Math.log(S/X)+( r+(Math.pow(sigma,2)/2))*T)/(sigma*Math.sqrt(T));
             d2=d1-sigma*Math.sqrt(T);
             Random R = new Random();
