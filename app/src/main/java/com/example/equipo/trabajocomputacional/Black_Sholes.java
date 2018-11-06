@@ -25,7 +25,7 @@ TextView textView1;
         setContentView(R.layout.activity_black__sholes);
         boton=findViewById(R.id.boton4);
         entrada1=findViewById(R.id.editText1);
-        entrada2=findViewById(R.id.editText2);
+        //entrada2=findViewById(R.id.editText2);
         entrada3=findViewById(R.id.editText3);
         entrada4=findViewById(R.id.editText4);
         entrada5=findViewById(R.id.editText5);
@@ -39,7 +39,7 @@ TextView textView1;
             public void onClick(View v) {
 
                 c1=entrada1.getText().toString();
-                c2=entrada2.getText().toString();
+               // c2=entrada2.getText().toString();
                 c3=entrada3.getText().toString();
                 c4=entrada4.getText().toString();
                 c5=entrada5.getText().toString();
@@ -47,15 +47,15 @@ TextView textView1;
 
 
 
-        if(c1.equals("")||c2.equals("")||c3.equals("")||c4.equals("")||c5.equals("")||c6.equals(""))
+        if(c1.equals("")||/*c2.equals("")||*/c3.equals("")||c4.equals("")||c5.equals("")||c6.equals(""))
         {
 
         mensaje();
 
         }else{
 
-            C=Double.parseDouble(c1);
-            T=Double.parseDouble(c2);
+            //C=Double.parseDouble(c1);
+            T=Double.parseDouble(c1);
             r=Double.parseDouble(c3);
             sigma=Double.parseDouble(c4);
             X=Double.parseDouble(c5);
