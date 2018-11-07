@@ -68,7 +68,8 @@ TextView textView1;
 
 
             C=S*N*d1-X*Math.exp(-r*T)*N*d2;
-            textView1.setText(String.valueOf(C));
+            textView1.setText(String.format("%.2f", C));
+           // textView1.setText(String.valueOf(C));
 
         }
 
