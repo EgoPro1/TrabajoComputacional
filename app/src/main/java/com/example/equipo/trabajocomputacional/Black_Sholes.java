@@ -15,9 +15,13 @@ public class Black_Sholes extends AppCompatActivity {
 
 Button boton;
     EditText entrada1,entrada2,entrada3,entrada4,entrada5,entrada6;
-   double C,T,r,sigma,X,S ,d1,d2;
+   double C,T,r,sigma,X,S ,d1,d2,P;
   String c1,c2,c3,c4,c5,c6;
-TextView textView1;
+TextView textView1,textView2;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +36,7 @@ TextView textView1;
         entrada6=findViewById(R.id.editText6);
 
         textView1=findViewById(R.id.textView13);
-
+        textView2=findViewById(R.id.textView14);
 
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,14 +65,16 @@ TextView textView1;
             X=Double.parseDouble(c5);
             S=Double.parseDouble(c6);
 
-            d1=( Math.log(S/X)+( r+(Math.pow(sigma,2)/2))*T)/(sigma*Math.sqrt(T));
-            d2=d1-sigma*Math.sqrt(T);
-            Random R = new Random();
-            double N =0+ (1 - 0) * R.nextDouble();
+            d1=( Math.log(S/X)+( (r*0.01)+(Math.pow((sigma*0.01),2)/2))*T)/((sigma*0.01)*Math.sqrt(T));
+            d2=d1-(sigma*0.01)*Math.sqrt(T);
+            P= X * Math.exp((-r*0.01) * T) *ND(-d2) - S * ND(-d1);
+            //Random R = new Random();
+           // double N =0+ (1 - 0) * R.nextDouble();
 
 
-            C=S*N*d1-X*Math.exp(-r*T)*N*d2;
-            textView1.setText(String.format("%.2f", C));
+            C=S*ND(d1)-X*Math.exp((-r*0.01)*T)*ND(d2);
+            textView1.setText("Call :"+String.format("%.4f", C));
+            textView2.setText("Put :"+String.format("%.4f", P));
            // textView1.setText(String.valueOf(C));
 
         }
@@ -86,6 +92,24 @@ TextView textView1;
 
 
     }
+
+    public double ND(double x)
+        {
+        double sum = x, val = x;
+
+        for (int i = 1; i <= 100; i++)
+        {
+            val *= x * x / (2.0 * i + 1.0);
+            sum += val;
+        }
+
+        return 0.5 + (sum / Math.sqrt(2.0 * Math.PI)) * Math.exp(-(x * x) / 2.0);
+    }
+
+
+
+
+
 
     public void mensaje(){
 
